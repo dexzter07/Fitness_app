@@ -180,7 +180,7 @@ class _LoginDanceState extends State<LoginDance> {
                 child: Text("FORGOT PASSWORD", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
               ),
             ),
-            SizedBox(height: 100,),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.10,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[

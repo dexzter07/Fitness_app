@@ -1,3 +1,4 @@
+import 'package:dance_id_user/accounts/login.dart';
 import 'package:flutter/material.dart';
 
 class RegisterDance extends StatefulWidget {
@@ -24,7 +25,7 @@ class _RegisterDanceState extends State<RegisterDance> {
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 70,),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.08,),
               Center(child: Text("Sign Up",style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),)),
               SizedBox(height: 20,),
               Padding(
@@ -300,7 +301,7 @@ class _RegisterDanceState extends State<RegisterDance> {
                   ),
                 ),
               ),//Row
-              SizedBox(height: 60,),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.10,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -310,7 +311,7 @@ class _RegisterDanceState extends State<RegisterDance> {
                   ),
                   InkWell(
                       onTap:() {
-                        Navigator.push(context,MaterialPageRoute(builder: (context) => RegisterDance()));
+                        Navigator.push(context,MaterialPageRoute(builder: (context) => LoginDance()));
                       },
                       child: Text("Sign In", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),))
                 ],

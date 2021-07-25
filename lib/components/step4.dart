@@ -1,3 +1,4 @@
+import 'package:dance_id_user/components/profile1.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +26,7 @@ class _step4forbussinessState extends State<step4forbussiness> {
           children: [
             SizedBox(height: 70,),
             Text("STEP 4 0F 4",style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
-            SizedBox(height: 10,),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.01,),
             Center(child: Text("How can we contact you?",style: TextStyle(fontSize: 19, fontWeight: FontWeight.w600),)),
             SizedBox(height: 20,),
 
@@ -204,7 +205,7 @@ class _step4forbussinessState extends State<step4forbussiness> {
             SizedBox(height: 10,),
 
             Container(
-              width: 300,
+              width: 310,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.all(Radius.circular(7)),
@@ -213,7 +214,10 @@ class _step4forbussinessState extends State<step4forbussiness> {
               ),
               child: DropdownButton<String>(
                 underline: SizedBox(),
-                hint: Text("Country code", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14,)),
+                hint: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("Country code", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14,)),
+                ),
                 items: <String>['+91', "+11"].map((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
@@ -289,14 +293,14 @@ class _step4forbussinessState extends State<step4forbussiness> {
                 height: 50,
                 child: FlatButton(
                   color: Color.fromRGBO(59, 59, 59, 1),
-                  child: Text("NEXT", style: TextStyle(color: Colors.white),),
+                  child: Text("GET A DEMO", style: TextStyle(color: Colors.white),),
                   shape: RoundedRectangleBorder(side: BorderSide(
                       color: Colors.black,
                       width: 1,
                       style: BorderStyle.solid
                   ), borderRadius: BorderRadius.circular(7)),
                   onPressed: (){
-                    // Navigator.push(context,MaterialPageRoute(builder: (context) => step4forbussiness()));
+                    Navigator.push(context,MaterialPageRoute(builder: (context) => DanceIdprofile1()));
                   },
                 ),
               ),

@@ -112,7 +112,7 @@ class _ForgotPasswordDanceState extends State<ForgotPasswordDance> {
 
 
 
-              SizedBox(height: 230,),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.27,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
