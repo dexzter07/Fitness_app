@@ -23,8 +23,8 @@ class _LoginDanceState extends State<LoginDance> {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        body: ListView(
+
           children: [
             SizedBox(height: 70,),
             Padding(
@@ -63,7 +63,7 @@ class _LoginDanceState extends State<LoginDance> {
                     obscureText: false,
 
                     style: TextStyle(
-                      height: 0.8,
+                      height: 1,
 
                     ),
 
@@ -119,7 +119,7 @@ class _LoginDanceState extends State<LoginDance> {
                     obscureText: true,
                     obscuringCharacter: "*",
                     style: TextStyle(
-                      height: 0.8,
+                      height: 1,
 
                     ),
 
@@ -151,7 +151,7 @@ class _LoginDanceState extends State<LoginDance> {
                 ),
               ),
             ),
-            SizedBox(height: 30,),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.03,),
             Center(
               child: SizedBox(
                 width: 306,
@@ -170,7 +170,7 @@ class _LoginDanceState extends State<LoginDance> {
                 ),
               ),
             ),
-            SizedBox(height: 40,),
+            SizedBox(height: MediaQuery.of(context).size.height*0.04,),
 
             Center(
               child: InkWell(

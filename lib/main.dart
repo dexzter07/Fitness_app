@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 import 'components/home.dart';
+import 'components/mainpage.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,8 +25,8 @@ class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SplashScreen(
-      seconds: 1,
-      navigateAfterSeconds:DanceIdprofile1(),
+      seconds: 3,
+      navigateAfterSeconds:MainPageDashboard(),
       backgroundColor: Colors.grey[90],
 
       image : Image.asset("images/logo.png", width: 190.03, height: 168.15,),

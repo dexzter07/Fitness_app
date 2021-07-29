@@ -237,7 +237,7 @@ class _DanceIdprofile1State extends State<DanceIdprofile1> {
 
 
                   dropdownColor: Colors.white,
-hint: Text("Yoga"),
+                  hint: Text("Yoga"),
                   icon: Icon(Icons.arrow_drop_down),
                   iconSize: 30.0,
                   isExpanded: true,

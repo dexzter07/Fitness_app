@@ -1,3 +1,4 @@
+import 'package:dance_id_user/components/success.dart';
 import 'package:flutter/material.dart';
 
 class BankDetails extends StatefulWidget {
@@ -318,7 +319,7 @@ class _BankDetailsState extends State<BankDetails> {
                     style: BorderStyle.solid
                 ), borderRadius: BorderRadius.circular(33.33)),
                 onPressed: (){
-                  // Navigator.push(context,MaterialPageRoute(builder: (context) => Danceidprofile3()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context) => DanceIdSuccess()));
                 },
               ),
             ),
