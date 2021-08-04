@@ -1,5 +1,13 @@
+import 'package:dance_id_user/accounts/login.dart';
+import 'package:dance_id_user/components/assignSeatsButtons.dart';
+import 'package:dance_id_user/components/createEvents.dart';
+import 'package:dance_id_user/components/editEvents.dart';
+import 'package:dance_id_user/components/orderhistory.dart';
+import 'package:dance_id_user/components/viewEvents.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'createGroup.dart';
 
 class MainPageDashboard extends StatefulWidget {
   @override
@@ -32,16 +40,24 @@ class _MainPageDashboardState extends State<MainPageDashboard> {
             child: new ListView(
               children: [
 //            header
-                new Container(
-                  height: MediaQuery.of(context).size.height * 0.15,
-                  child: new UserAccountsDrawerHeader(
-                    decoration: BoxDecoration(
+                new UserAccountsDrawerHeader(
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(69, 95, 170, 1),
 
-                        color: Colors.white38
-                    ),
                   ),
+                  currentAccountPicture: CircleAvatar(
+                      backgroundColor: Color.fromRGBO(69, 95, 170, 1),
+                    radius: 10,
+                    child: Container(
+
+                      color: Color.fromRGBO(69, 95, 170, 1),
+
+                      child:Image.asset("images/logo.png", fit: BoxFit.fill,),
+                    )
+                  ),
+                  accountName: Text("Hello  @Username"),
                 ),
-                Divider(color: Colors.black,),
+               
                 InkWell(
                   onTap: (){},
                   child: ListTile(
@@ -52,7 +68,20 @@ class _MainPageDashboardState extends State<MainPageDashboard> {
                 ),
                 Divider(color: Colors.black,),
                 InkWell(
-                  onTap: (){},
+                  onTap: (){
+                    Navigator.push(context,MaterialPageRoute(builder: (context) => OrderHistory()));
+                  },
+                  child: ListTile(
+                    title: Text('Order History'),
+                    leading: Icon(Icons.person,),
+                    trailing: Icon(Icons.arrow_forward_ios,),
+                  ),
+                ),
+                Divider(color: Colors.black,),
+                InkWell(
+                  onTap: (){
+                    Navigator.push(context,MaterialPageRoute(builder: (context) => CreateEvents()));
+                  },
                   child: ListTile(
                     title: Text('Manage Events'),
                     leading: Icon(Icons.person,),
@@ -79,6 +108,18 @@ class _MainPageDashboardState extends State<MainPageDashboard> {
                 ),
                 Divider(color: Colors.black,),
                 InkWell(
+                  onTap: (){
+                    Navigator.push(context,MaterialPageRoute(builder: (context) => AssignSeatsButtons()));
+
+                  },
+                  child: ListTile(
+                    title: Text('Create Available Seats'),
+                    leading: Icon(Icons.event_seat_sharp,),
+                    trailing: Icon(Icons.arrow_forward_ios,),
+                  ),
+                ),
+                Divider(color: Colors.black,),
+                InkWell(
                   onTap: (){},
                   child: ListTile(
                     title: Text('Manage Employee'),
@@ -88,9 +129,11 @@ class _MainPageDashboardState extends State<MainPageDashboard> {
                 ),
                 Divider(color: Colors.black,),
                 InkWell(
-                  onTap: (){},
+                  onTap: (){
+                    Navigator.push(context,MaterialPageRoute(builder: (context) => CreateGroup()));
+                  },
                   child: ListTile(
-                    title: Text('Schedule'),
+                    title: Text('Create Groups'),
                     leading: Icon(Icons.schedule,),
                     trailing: Icon(Icons.arrow_forward_ios,),
                   ),
@@ -104,7 +147,7 @@ class _MainPageDashboardState extends State<MainPageDashboard> {
                     trailing: Icon(Icons.arrow_forward_ios,),
                   ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.05,),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.03,),
                 Center(
                   child: SizedBox(
                     width: 149.28,
@@ -125,11 +168,13 @@ class _MainPageDashboardState extends State<MainPageDashboard> {
                           style: BorderStyle.solid
                       ), borderRadius: BorderRadius.circular(7)),
                       onPressed: (){
+                        Navigator.push(context,MaterialPageRoute(builder: (context) => LoginDance()));
 
                       },
                     ),
                   ),
-                ),//
+                ),
+                SizedBox(height: 10,)//
               ],
             ),
           ),
@@ -207,7 +252,8 @@ class _MainPageDashboardState extends State<MainPageDashboard> {
                         width: MediaQuery.of(context).size.width,),
                       Positioned(
                         top: MediaQuery.of(context).size.height*0.2,
-                        left: MediaQuery.of(context).size.width*0.19,
+                        left: MediaQuery.of(context).size.width*0.12,
+                        right: MediaQuery.of(context).size.width*0.12,
                         child: Container(
                           decoration: BoxDecoration(
                             color: Colors.white,
@@ -278,6 +324,7 @@ class _MainPageDashboardState extends State<MainPageDashboard> {
                                         style: BorderStyle.solid
                                     ), borderRadius: BorderRadius.circular(7)),
                                     onPressed: (){
+                                      Navigator.push(context,MaterialPageRoute(builder: (context) => Editevents()));
 
                                     },
                                   ),
@@ -291,6 +338,7 @@ class _MainPageDashboardState extends State<MainPageDashboard> {
                                         style: BorderStyle.solid
                                     ), borderRadius: BorderRadius.circular(7)),
                                     onPressed: (){
+                                      Navigator.push(context,MaterialPageRoute(builder: (context) => Viewevents()));
 
                                     },
                                   ),
@@ -311,7 +359,67 @@ class _MainPageDashboardState extends State<MainPageDashboard> {
                 ],
               ),
 
-              Icon(Icons.directions_transit),
+              ListView(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ListTile(
+                      tileColor: Colors.grey[200],
+                      leading: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text("06.00"),
+                      ),
+                      title: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text("Yoga", style: TextStyle(fontSize: 18,),),
+                      ),
+                      trailing: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text("20 Seats"),
+                      ),
+
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ListTile(
+                      tileColor: Colors.grey[200],
+                      leading: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text("08.00"),
+                      ),
+                      title: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text("Jumba", style: TextStyle(fontSize: 18,),),
+                      ),
+                      trailing: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text("50 Seats"),
+                      ),
+
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ListTile(
+                      tileColor: Colors.grey[200],
+                      leading: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text("10.00"),
+                      ),
+                      title: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text("Massage", style: TextStyle(fontSize: 18,),),
+                      ),
+                      trailing: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text("70 Seats"),
+                      ),
+
+                    ),
+                  ),
+                ],
+              )
 
             ],
           ),

@@ -1,5 +1,6 @@
 import 'package:dance_id_user/accounts/forgotpassword.dart';
 import 'package:dance_id_user/accounts/register.dart';
+import 'package:dance_id_user/components/mainpage.dart';
 import 'package:dance_id_user/components/step1.dart';
 import 'package:flutter/material.dart';
 
@@ -165,7 +166,7 @@ class _LoginDanceState extends State<LoginDance> {
                       style: BorderStyle.solid
                   ), borderRadius: BorderRadius.circular(21)),
                   onPressed: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context) => Steps1forbussiness()));
+                    Navigator.push(context,MaterialPageRoute(builder: (context) => MainPageDashboard()));
                   },
                 ),
               ),

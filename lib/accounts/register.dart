@@ -1,4 +1,5 @@
 import 'package:dance_id_user/accounts/login.dart';
+import 'package:dance_id_user/components/step1.dart';
 import 'package:flutter/material.dart';
 
 class RegisterDance extends StatefulWidget {
@@ -296,6 +297,7 @@ class _RegisterDanceState extends State<RegisterDance> {
                         style: BorderStyle.solid
                     ), borderRadius: BorderRadius.circular(21)),
                     onPressed: (){
+                      Navigator.push(context,MaterialPageRoute(builder: (context) => Steps1forbussiness()));
 
                     },
                   ),
@@ -311,7 +313,6 @@ class _RegisterDanceState extends State<RegisterDance> {
                   ),
                   InkWell(
                       onTap:() {
-                        Navigator.push(context,MaterialPageRoute(builder: (context) => LoginDance()));
                       },
                       child: Text("Sign In", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),))
                 ],

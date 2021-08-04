@@ -1,4 +1,8 @@
+import 'package:dance_id_user/components/assignSeatsButtons.dart';
+import 'package:dance_id_user/components/createEvents.dart';
+import 'package:dance_id_user/components/createGroup.dart';
 import 'package:dance_id_user/components/profile1.dart';
+import 'package:dance_id_user/components/seatCreation.dart';
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 
@@ -26,7 +30,7 @@ class Splash extends StatelessWidget {
   Widget build(BuildContext context) {
     return SplashScreen(
       seconds: 3,
-      navigateAfterSeconds:MainPageDashboard(),
+      navigateAfterSeconds:Home(),
       backgroundColor: Colors.grey[90],
 
       image : Image.asset("images/logo.png", width: 190.03, height: 168.15,),
